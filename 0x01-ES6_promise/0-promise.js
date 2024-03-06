@@ -1,9 +1,9 @@
 export default function getResponseFromAPI() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(((resolve, reject) => {
     if (true) {
-      resolve("It worked");
+      resolve('It worked');
     } else {
-      reject(Error("Maybe next time"));
+      reject(Error('Maybe next time'));
     }
-  });
-};
+  }));
+}
