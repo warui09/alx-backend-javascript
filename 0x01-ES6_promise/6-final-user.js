@@ -7,5 +7,5 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       { status: user.status, value: user.value },
       { status: photo.status, value: photo.value },
     ]))
-    .catch((err) => console.log(err));
+    //.catch((err) => console.log(err));
 }
