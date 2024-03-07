@@ -4,19 +4,19 @@ export default class HolbertonCourse {
     if (typeof name === 'string') {
       this._name = name;
     } else {
-      console.log('TypeError: Name must be a string');
+      throw new Error('TypeError: Name must be a string');
     }
 
     if (typeof length === 'number') {
       this._length = length;
     } else {
-      console.log('TypeError: Length must be a number');
+      throw new Error('TypeError: Length must be a number');
     }
 
     if (Array.isArray(students) && students.every((item) => typeof item === 'string')) {
       this._students = students;
     } else {
-      console.log('TypeError: Students must be an array of Strings');
+      throw new Error('TypeError: Students must be an array of Strings');
     }
   }
 
