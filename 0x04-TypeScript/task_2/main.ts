@@ -10,8 +10,16 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-interface createEmployeeInterface {
+interface createEmployee {
   (salary: number | string): Director | Teacher;
+}
+
+interface isDirector {
+  (employee: Director | Teacher): string;
+}
+
+interface executeWork {
+  (employee: Director | Teacher): string;
 }
 
 export class Director implements DirectorInterface {
@@ -32,3 +40,7 @@ export const createEmployee = (salary: number | string) => {
   else
 	  return new Director();
 }
+
+export const isDirector = (employee) => employee isinstance Director;
+
+export const executeWork = (employee) => isDirector(employee) ? employee.workDirectorTasks() : employee.workTeacherTasks();
