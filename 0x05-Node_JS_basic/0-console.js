@@ -3,6 +3,8 @@
  * @param {String} message - the message to print.
  */
 
-module.exports = function displayMessage(message) {
+const displayMessage = (message) => {
   process.stdout.write(`${message}\n`);
 };
+
+module.exports = displayMessage;
