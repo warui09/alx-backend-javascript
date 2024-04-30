@@ -7,6 +7,7 @@ const HOST = 'localhost';
 const app = http.createServer((req, res) => {
   const reqUrl = url.parse(req.url).pathname;
 
+  res.writeHead(200, { 'Content-Type': 'text/html' });
   if (reqUrl === '/') {
     res.write('Hello Holberton School!');
     res.end();
@@ -17,12 +18,6 @@ const app = http.createServer((req, res) => {
     res.write('Number of students: 10\n');
     res.write('Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaume, Katie\n');
     res.write('Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy');
-    res.end();
-  }
-
-  if (reqUrl === '') {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('Hello Holberton School!');
     res.end();
   }
 });
