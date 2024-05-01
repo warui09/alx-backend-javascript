@@ -6,6 +6,9 @@
   "scripts": {
     "test": "npm test"
   },
-  "author": "Kevin Warui",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
 }
