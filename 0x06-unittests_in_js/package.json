@@ -1,10 +1,10 @@
 {
-  "name": "calcul",
+  "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "Returns the sum of two numbers after rounding them",
+  "description": "Unittests in JS",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha '*.test.js'"
   },
   "author": "",
   "license": "ISC",
