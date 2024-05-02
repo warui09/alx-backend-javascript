@@ -7,9 +7,12 @@ describe('sendPaymentRequestToApi', () => {
   it('should always return 10', () => {
     const stub = sinon.stub(Utils, 'calculateNumber');
     stub.returns(10);
+    const consoleSpy = sinon.spy(console, 'log');
 
     sendPaymentRequestToApi(100, 20);
     expect(stub(100, 20)).to.equal(10);
+    expect(consoleSpy.calledOnceWithExactly('The total is: 10')).to.be.true; 
+    consoleSpy.restore();
     stub.restore();
   });
 
@@ -19,13 +22,5 @@ describe('sendPaymentRequestToApi', () => {
     sendPaymentRequestToApi(100, 20);
     expect(spy.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
     spy.restore();
-  });
-
-  it('should log the correct total to the console', () => {
-    const consoleSpy = sinon.spy(console, 'log');
-
-    sendPaymentRequestToApi(100, 20);
-    expect(consoleSpy.calledOnceWithExactly('The total is: 120')).to.be.true;
-    consoleSpy.restore();
   });
 });
